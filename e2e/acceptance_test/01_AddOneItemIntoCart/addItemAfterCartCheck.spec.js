@@ -1,6 +1,6 @@
 /**
  * シナリオ(内容...)
- * 
+ *
  *  1. カートに2つ商品を入れた後、１つ削除して、カートの中身が１つになっている事を確認
  */
 'use strict';
@@ -10,8 +10,8 @@ describe('UseCase01', function() {
 
   beforeEach(function() {
     browser.get('/orderlist/index.HTML');
-    page.cart = require('../../components/cart/cart.po');
-    page.home = require('../../components/home/home.po');
+    page.cart = require('../../components/cart/cart.po.js');
+    page.home = require('../../components/home/home.po.js');
   });
 
   // カートに2つ商品を入れた後、１つ削除して、カートの中身が１つになっている事を確認

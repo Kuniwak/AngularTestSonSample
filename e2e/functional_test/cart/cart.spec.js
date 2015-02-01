@@ -4,8 +4,8 @@ describe('home', function() {
 
   beforeEach(function(done) {
     browser.get('/orderlist/index.HTML');
-    page.cart = require('../../components/cart/cart.po');
-    page.home = require('../../components/home/home.po');
+    page.cart = require('../../components/cart/cart.po.js');
+    page.home = require('../../components/home/home.po.js');
     // 商品を2つ追加しておく
     page.home.addCart('0').then(function(){
       return page.home.addCart('1');

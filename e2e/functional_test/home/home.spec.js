@@ -8,7 +8,7 @@ describe('home (order list)', function() {
 
   beforeEach(function() {
     browser.get('/orderlist/index.HTML');
-    page.home = require('../../components/home/home.po');
+    page.home = require('../../components/home/home.po.js');
   });
 
   it('カートに商品を1つ追加', function(done) {

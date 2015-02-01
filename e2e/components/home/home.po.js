@@ -38,7 +38,7 @@ var homePage = function() {
    */
   this.moveCartView = function(){
     var viewCartBtn = new homePage().viewcartBtnEl;
-    var cartPage = require('../../components/cart/cart.po');
+    var cartPage = require('../cart/cart.po.js');
 
     return browser.wait(function(){
       return viewCartBtn.isPresent();
