@@ -7,8 +7,8 @@ describe('home', function() {
     page.cart = require('../../components/cart/cart.po.js');
     page.home = require('../../components/home/home.po.js');
     // 商品を2つ追加しておく
-    page.home.addCart('0').then(function(){
-      return page.home.addCart('1');
+    page.home.addCartByItemRowNo('0').then(function(){
+      return page.home.addCartByItemRowNo('1');
     }).then(function(){
       done();
     });

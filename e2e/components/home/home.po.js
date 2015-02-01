@@ -9,8 +9,8 @@
 var homePage = function() {
 
   // エレメント
-  this.buyBtnEl = element(by.css('.item-buy'));
-  this.viewcartBtnEl = element(by.css('.item-viewcart'));
+  this.buyBtnEl = element(by.css('.js-item-buy'));
+  this.viewcartBtnEl = element(by.css('.js-item-viewcart'));
 
 
   /**
@@ -20,7 +20,7 @@ var homePage = function() {
    * @param  {Number}   itemRowNo  - 追加するカートの列番号
    * @return {Promise}
    */
-  this.addCart = function(itemRowNo){
+  this.addCartByItemRowNo = function(itemRowNo){
     var cartBtn = element(by.repeater('product in products').row(itemRowNo))
       .element(by.css('.item-add'));
     return browser.wait(function(){

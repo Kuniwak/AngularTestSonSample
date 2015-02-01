@@ -17,8 +17,8 @@ describe('UseCase01', function() {
   // カートに2つ商品を入れた後、１つ削除して、カートの中身が１つになっている事を確認
   it('cart check', function(done) {
     // 商品を2つ追加しておく
-    page.home.addCart('0').then(function(){
-      return page.home.addCart('1');
+    page.home.addCartByItemRowNo('0').then(function(){
+      return page.home.addCartByItemRowNo('1');
     }).then(function(){
       // カードを見る
       return page.home.moveCartView();
