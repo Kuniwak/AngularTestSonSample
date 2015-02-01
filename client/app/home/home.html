@@ -4,7 +4,8 @@
      ng-disabled="!CartItemCount()">購入する</div>
 <div ui-sref="main.app.cart()"
      class="btn btn-info item-viewcart js-item-viewcart"
-     ng-disabled="!CartItemCount()">カートを見る
+     ng-disabled="!CartItemCount()"
+     >See Cart
        <span ng-if="CartItemCount()">({{CartItemCount()}})</span>
 </div>
 <ul class="list-group">
