@@ -9,8 +9,8 @@
 var homePage = function() {
 
   // エレメント
-  this.buyBtnEl = element(by.css('.item-buy'));
-  this.viewcartBtnEl = element(by.css('.item-viewcart'));
+  this.buyBtnEl = element(by.css('.js-item-buy'));
+  this.viewcartBtnEl = element(by.css('.js-item-viewcart'));
 
 
   /**
