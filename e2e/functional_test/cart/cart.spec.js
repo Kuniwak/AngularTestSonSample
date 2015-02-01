@@ -28,4 +28,32 @@ describe('home', function() {
       done();
     });
   });
+
+  //it('should add additional amount for the product', function (done) {
+  //  var purchase = page.cart.purchases.toString();
+  //  var count = Number(purchase.splice(purchase.indexOf(":"), purchase.length));
+  //
+  //  page.home.addCartByItemRowNo('1').then(function () {
+  //    return page.cart.addCart('1');
+  //  }).then(function () {
+  //    expect(page.cart.purchases).toBeGreaterThan(count);
+  //  });
+  //});
+
+  it('should clear the items in the cart', function(done) {
+
+    page.home.addCartByItemRowNo('1').then(function () {
+      return page.home.moveCartView();
+    }).then(function () {
+      return page.cart.clearBtnEl;
+    }).then(function (cartBtn) {
+      expect(cartBtn.isPresent()).toBe(true);
+      return cartBtn.click();
+    }).then(function () {
+      expect(page.cart.cartItemRowsEl.count()).toEqual(0);
+      done();
+    });
+
+  });
+
 });

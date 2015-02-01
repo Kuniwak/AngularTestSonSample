@@ -15,6 +15,8 @@ var CartPage = function() {
   this.cartItemEl = element(by.repeater(cartItem));
   this.clearBtnEl = element(by.css('.cart-clear'));
   this.buyBtnEl   = element(by.css('.cart-buy'));
+  this.AddBtnEl   = element(by.css('.cart-add'));
+  this.purchases  = element(by.css('.list-group-item:nth-child(3)'));
 
   /**
    * ユースケース(カート内商品の削除)
@@ -32,6 +34,17 @@ var CartPage = function() {
       return cartBtn.click();
     });
   };
+
+  this.addCart = function (itemId) {
+    var cartBtn = element(by.repeater(cartItem).row(itemId))
+      .element(by.css('.cart-add'));
+    return browser.wait(function () {
+      return cartBtn.isPresent();
+    }, 10000, 'about add cart').then(function () {
+      return cartBtn.click();
+    });
+  };
+
 };
 
 module.exports = new CartPage();
