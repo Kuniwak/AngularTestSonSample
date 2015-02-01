@@ -11,19 +11,9 @@ describe('home (order list)', function() {
     page.home = require('../../components/home/home.po');
   });
 
-  it('カートに商品を1つ追加', function(done) {
-    page.home.addCart('1').then(function(){
-      // TODO: 表示する内容のテストはNG
-      expect(page.home.viewcartBtnEl.getText()).toBe('カートを見る (1)');
-      done();
-    });
-  });
-
-  it('カートに商品を2つ追加', function(done) {
-    page.home.addCart('1').then(function(){
-      return page.home.addCart('2');
-    }).then(function(){
-      expect(page.home.viewcartBtnEl.getText()).toBe('カートを見る (2)');
+  it('Add item in cart', function(done) {
+    page.home.addCartByItemRowNo('1').then(function(){
+      expect(page.home.viewcartBtnEl.getText()).toMatch(/\d+/);
       done();
     });
   });
