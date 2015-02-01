@@ -29,13 +29,13 @@ describe('home (order list)', function() {
   });
 
   it('Must not press without adding to cart', function(done) {
-    page.home.viewcartBtnEl.getAttribute('disabled').then(function(isDisabled){
+    page.home.viewcartBtnEl.isPresent().then(function(isPresent) {
+      expect(isPresent).toBe(true);
+    }).then(function() {
+      return page.home.viewcartBtnEl.getAttribute('disabled');
+    }).then(function(isDisabled){
       // When fail "Expected null to be 'true'."
       expect(isDisabled).not.toBe(null);
-      done();
-    },
-    function(res){
-      fail();
       done();
     });
   });
